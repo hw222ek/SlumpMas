@@ -1,0 +1,102 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light|Oswald);
+
+#main {
+    max-width: 800px;
+    min-width: 700px;
+    margin: auto;
+    padding-top: 25px;
+}
+
+#info {
+    width: 460px;
+    margin: auto;
+}
+
+#timer, #chance {
+    display: inline-block;
+    background-color: cornflowerblue;
+    width: 220px;
+    margin: auto auto 15px auto;
+    text-align: center;
+    font-size: 130px;
+    color: #ffffff;
+    font-family: 'Shadows Into Light', cursive;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#chance {
+    background-color: darksalmon;
+}
+
+#actual {
+    width: 320px;
+    margin: auto;
+
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: cornflowerblue;
+
+}
+
+.text {
+    background-color: cornflowerblue;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding: 5px 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.inline, select {
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.inline {
+    margin: 0 5px;
+}
+
+#interval {
+    margin-right: 25px;
+}
+
+#forms {
+    width: 420px;
+    margin: auto;
+}
+
+.c {
+    width: 100%;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.card {
+    width: 20%;
+    margin: 0 2.3%;
+}
+
+.hide {
+    display: none;
+}
+
+#choosencard {
+    width: 100%;
+}
+
+#restart {
+    width: 50px;
+    margin-left: 70%;
+}
