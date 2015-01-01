@@ -110,18 +110,22 @@ var Mas = {
 			if(Mas.secretTwo > 0 && Mas.secretTwo < 26) {
 				Nodes.actual.firstChild.src = "pics/heart.png";
 				Mas.changeCounter = 1;
+				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 
 			} else if(Mas.secretTwo > 25 && Mas.secretTwo < 51) {
 				Nodes.actual.firstChild.src = "pics/clove.png";
 				Mas.changeCounter = 1;
+				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 
 			} else if(Mas.secretTwo > 50 && Mas.secretTwo < 76) {
 				Nodes.actual.firstChild.src = "pics/diamond.png";
 				Mas.changeCounter = 1;
+				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 
 			} else {
 				Nodes.actual.firstChild.src = "pics/spade.png";
 				Mas.changeCounter = 1;
+				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 			}
 		} else {
 			//Add 1 to counter
