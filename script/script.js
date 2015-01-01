@@ -117,6 +117,7 @@ var Mas = {
 		Nodes.actual.firstChild.src = "pics/" + suit + ".png";
 		Mas.changeCounter = 1;
 		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+		Mas.playAgain();
 	},
 
 	playAgain: function() {
