@@ -81,21 +81,7 @@ var Mas = {
 		//Displays percent div
 		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 
-		//Display play again button
-		var reLink = document.createElement("a");
-		reLink.href = "#";
-
-		var reStart = document.createElement("img");
-		reStart.src = "pics/shuffle.png";
-		reStart.id = "restart";
-
-		reLink.appendChild(reStart);
-		reLink.addEventListener("click", function(e){
-			e.preventDefault();
-			location.reload();
-		});
-
-		Nodes.sound.appendChild(reLink);
+		Mas.playAgain();
 	},
 
 	change: function() {
@@ -131,6 +117,24 @@ var Mas = {
 		Nodes.actual.firstChild.src = "pics/" + suit + ".png";
 		Mas.changeCounter = 1;
 		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+	},
+
+	playAgain: function() {
+		//Display play again button
+		var reLink = document.createElement("a");
+		reLink.href = "#";
+
+		var reStart = document.createElement("img");
+		reStart.src = "pics/shuffle.png";
+		reStart.id = "restart";
+
+		reLink.appendChild(reStart);
+		reLink.addEventListener("click", function(e){
+			e.preventDefault();
+			location.reload();
+		});
+
+		Nodes.sound.appendChild(reLink);
 	},
 
 	playSound: function(){
