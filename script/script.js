@@ -108,24 +108,16 @@ var Mas = {
 			Mas.secretTwo = Math.floor( Math.random() * 100)+1;
 
 			if(Mas.secretTwo > 0 && Mas.secretTwo < 26) {
-				Nodes.actual.firstChild.src = "pics/heart.png";
-				Mas.changeCounter = 1;
-				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+				Mas.changeCard("heart");
 
 			} else if(Mas.secretTwo > 25 && Mas.secretTwo < 51) {
-				Nodes.actual.firstChild.src = "pics/clove.png";
-				Mas.changeCounter = 1;
-				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+				Mas.changeCard("heart");
 
 			} else if(Mas.secretTwo > 50 && Mas.secretTwo < 76) {
-				Nodes.actual.firstChild.src = "pics/diamond.png";
-				Mas.changeCounter = 1;
-				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+				Mas.changeCard("heart");
 
 			} else {
-				Nodes.actual.firstChild.src = "pics/spade.png";
-				Mas.changeCounter = 1;
-				Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+				Mas.changeCard("heart");
 			}
 		} else {
 			//Add 1 to counter
@@ -133,6 +125,12 @@ var Mas = {
 			Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 		}
 
+	},
+
+	changeCard: function(suit) {
+		Nodes.actual.firstChild.src = "pics/" + suit + ".png";
+		Mas.changeCounter = 1;
+		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 	},
 
 	playSound: function(){
