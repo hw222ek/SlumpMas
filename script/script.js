@@ -97,13 +97,13 @@ var Mas = {
 				Mas.changeCard("heart");
 
 			} else if(Mas.secretTwo > 25 && Mas.secretTwo < 51) {
-				Mas.changeCard("heart");
+				Mas.changeCard("clove");
 
 			} else if(Mas.secretTwo > 50 && Mas.secretTwo < 76) {
-				Mas.changeCard("heart");
+				Mas.changeCard("diamond");
 
 			} else {
-				Mas.changeCard("heart");
+				Mas.changeCard("spade");
 			}
 		} else {
 			//Add 1 to counter
