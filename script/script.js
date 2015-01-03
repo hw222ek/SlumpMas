@@ -113,6 +113,7 @@ var Mas = {
 			Mas.playSound("nochange");
 			Mas.changeCounter ++;
 			Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
+			Mas.playAgain();
 		}
 
 	},
