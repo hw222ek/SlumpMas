@@ -45,6 +45,9 @@ var Mas = {
 		Mas.sequenceLength -= 1;
 		Nodes.timer.innerHTML = Mas.sequenceLength;
 
+		if(Mas.sequenceLength === 5) {
+			Mas.playSound("clock");
+		}
 
 		if(Mas.sequenceLength === 0) {
 			Mas.change();
@@ -90,7 +93,7 @@ var Mas = {
 
 		if (Mas.secret <= Mas.changeCounter * Mas.changePercent) {
 
-			Mas.playSound();
+			Mas.playSound("alarm");
 			Mas.secretTwo = Math.floor( Math.random() * 100)+1;
 
 			if(Mas.secretTwo > 0 && Mas.secretTwo < 26) {
@@ -107,6 +110,7 @@ var Mas = {
 			}
 		} else {
 			//Add 1 to counter
+			Mas.playSound("nochange");
 			Mas.changeCounter ++;
 			Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 		}
@@ -138,8 +142,8 @@ var Mas = {
 		Nodes.sound.appendChild(reLink);
 	},
 
-	playSound: function(){
-		document.getElementById("sound").innerHTML="<embed src='"+"sound/alarm.mp3"+"' hidden=true autostart=true loop=false>";
+	playSound: function(sound){
+		document.getElementById("sound").innerHTML="<embed src='"+"sound/" + sound +".mp3"+"' hidden=true autostart=true loop=false>";
 	}
 };
 
