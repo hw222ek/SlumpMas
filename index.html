@@ -7,29 +7,40 @@
 	</head>
 	<body>
 		<div id="main">
+			<h1>SLUMP MAS</h1>
+			
 			<div id="choose">
-				<h1>Slump Mas</h1>
 				<p class="text">1. Ställ in intervall och sannolikhet</p>
 
 				<div id="forms" class="c">
-					<p class="inline" title="Tidsintervall mellan möjlig trumfändring. Exempel var 45:e sekund är det möjlighet till trumfändring.">Tidsintervall i sekunder</p>
 					<form class="inline">
+						<p class="inline" title="Tidsintervall mellan möjlig trumfändring. Exempel var 45:e sekund är det möjlighet till trumfändring.">Tidsintervall sekunder</p>
 						<select id="interval" name="interval">
+							<option>10</option>
 							<option>15</option>
 							<option>20</option>
 							<option>25</option>
 							<option>30</option>
+							<option>35</option>
 							<option>40</option>
 							<option selected="selected">45</option>
+							<option>50</option>
+							<option>55</option>
 							<option>60</option>
+							<option>65</option>
+							<option>70</option>
 							<option>75</option>
+							<option>80</option>
+							<option>85</option>
 							<option>90</option>
 						</select>
-					</form>
 
-					<p class="inline" title="Sätt initial sannolikhet för trumfändring. Efter varje förlupet tidsintervall utan trumfändring ökar sannolikheten med initialt vald sannolikhet. Exempel 8% - 16% - 24%  eller 10% - 20% - 30% etc.">Sannolikhet i %</p>
-					<form class="inline">
+						<p class="inline" title="Sätt initial sannolikhet för trumfändring.">Sannolikhet %</p>
 						<select id="probability" name="probability">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
 							<option>5</option>
 							<option>6</option>
 							<option>7</option>
@@ -39,9 +50,20 @@
 							<option>15</option>
 							<option>20</option>
 							<option>25</option>
+							<option>30</option>
+							<option>35</option>
+							<option>40</option>
+							<option>45</option>
 							<option>50</option>
+							<option>60</option>
+							<option>70</option>
+							<option>80</option>
+							<option>90</option>
 							<option>100</option>
 						</select>
+
+						<p class="inline" title="Om valt: Efter varje förlupet tidsintervall utan trumfändring ökar sannolikheten med initialt vald sannolikhet. Exempel 8% - 16% - 24%  eller 10% - 20% - 30% etc.">Stegrande</p>
+						<input type="checkbox" id="expo" checked="true" value="true">
 					</form>
 				</div>
 
@@ -59,12 +81,13 @@
 			<div id="info">
 				<div id="timer"></div>
 				<div id="chance"></div>
+				<div id="expo"></div>
 			</div>
 
 			<div id="actual"></div>
 
 
-
+			<div id="shuffle"></div>
 			<div id="sound"></div>
 		</div>
 

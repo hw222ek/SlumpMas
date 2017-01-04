@@ -14,20 +14,27 @@
 
 #timer, #chance {
     display: inline-block;
-    background-color: cornflowerblue;
+    background-color: #50514F;
     width: 220px;
-    margin: auto auto 15px auto;
+    margin: auto;
     text-align: center;
-    font-size: 130px;
+    vertical-align: middle;
+    font-size: 80px;
     color: #ffffff;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Shadows Into Light', cursive;*/
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
 }
 
 #chance {
-    background-color: darksalmon;
+    background-color: #50514F;
 }
 
 #actual {
@@ -38,14 +45,22 @@
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 36px;
+    font-size: 60px;
     text-align: center;
-    color: cornflowerblue;
+    margin-top: 0px;
+    color: #FFF;
 
+    text-shadow: -10px 10px 0px #00e6e6,
+                 -20px 20px 0px #01cccc,
+                 -30px 30px 0px #00bdbd;
+
+    /*text-shadow: -10px 10px 0px #F25F5C,
+                 -20px 20px 0px #B24644,
+                 -30px 30px 0px #722D2C;*/
 }
 
 .text {
-    background-color: cornflowerblue;
+    background-color: #50514F;
     color: #ffffff;
     font-family: 'Oswald', sans-serif;
     font-size: 24px;
@@ -73,7 +88,7 @@ h1 {
 
 #forms {
     width: 800px;
-    padding-left: 22%;
+    text-align: center;
     margin: auto;
 }
 
@@ -82,12 +97,15 @@ h1 {
 }
 
 body {
-    background-color: lightblue;
+    background-color: #ECECEA;
 }
 
 .card {
     width: 20%;
     margin: 0 2.3%;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
 }
 
 .hide {
@@ -96,6 +114,9 @@ body {
 
 #choosencard {
     width: 100%;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
 }
 
 #restart {

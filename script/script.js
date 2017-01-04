@@ -2,15 +2,10 @@
 
 var Mas = {
 	sequenceLength: 0,
-
 	intervalID: 0,
-
 	changeCounter: 1,
-
 	changePercent: 0,
-
 	secret: 0,
-
 	secretTwo: 0,
 
 	init: function() {
@@ -81,9 +76,9 @@ var Mas = {
 		//(re)starts interval
 		Mas.intervalID = window.setInterval(Mas.displayTimer, 1000);
 
-		//Displays percent div
+		//Displays percent div and starting 00 for timer
 		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
-
+		Nodes.timer.innerHTML = "00";
 		Mas.playAgain();
 	},
 
@@ -113,7 +108,7 @@ var Mas = {
 			Mas.playSound("nochange");
 			Mas.changeCounter ++;
 			Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
-			Mas.playAgain();
+			//Mas.playAgain();
 		}
 
 	},
@@ -122,7 +117,7 @@ var Mas = {
 		Nodes.actual.firstChild.src = "pics/" + suit + ".png";
 		Mas.changeCounter = 1;
 		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
-		Mas.playAgain();
+		//Mas.playAgain();
 	},
 
 	playAgain: function() {
@@ -140,7 +135,7 @@ var Mas = {
 			location.reload();
 		});
 
-		Nodes.sound.appendChild(reLink);
+		Nodes.shuffle.appendChild(reLink);
 	},
 
 	playSound: function(sound){
@@ -164,6 +159,7 @@ var Nodes = {
 	timer: document.getElementById("timer"),
 	chance: document.getElementById("chance"),
 	sound: document.getElementById("sound"),
+	shuffle: document.getElementById("shuffle"),
 	actual: document.getElementById("actual")
 };
 
