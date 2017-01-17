@@ -5,8 +5,10 @@ var Mas = {
 	intervalID: 0,
 	changeCounter: 1,
 	changePercent: 0,
+	changeExponential: true,
 	secret: 0,
 	secretTwo: 0,
+	active: "starting value",
 
 	init: function() {
 		Mas.eventSetter();
@@ -16,22 +18,22 @@ var Mas = {
 		//Setts eventlisteners on all card img's
 		Nodes.heartCard.addEventListener("click", function(e){
 			e.preventDefault();
-
+			Mas.active = "heart";
 			Mas.displayActual("heart");
 		});
 		Nodes.cloveCard.addEventListener("click", function(e){
 			e.preventDefault();
-
+			Mas.active = "clove";
 			Mas.displayActual("clove");
 		});
 		Nodes.diamondCard.addEventListener("click", function(e){
 			e.preventDefault();
-
+			Mas.active = "diamond";
 			Mas.displayActual("diamond");
 		});
 		Nodes.spadeCard.addEventListener("click", function(e){
 			e.preventDefault();
-
+			Mas.active = "spade";
 			Mas.displayActual("spade");
 		});
 	},
@@ -58,6 +60,7 @@ var Mas = {
 		Mas.sequenceLength++;
 
 		Mas.changePercent = Nodes.probability.value;
+		Mas.changeExponential = Nodes.exponential.checked;
 
 		//hide choose div
 		Nodes.choose.className = "hide";
@@ -90,23 +93,29 @@ var Mas = {
 
 			Mas.playSound("alarm");
 			Mas.secretTwo = Math.floor( Math.random() * 100)+1;
-
-			if(Mas.secretTwo > 0 && Mas.secretTwo < 26) {
+			
+			if(Mas.secretTwo > 0 && Mas.secretTwo < 26 && Mas.active !== "heart") {
 				Mas.changeCard("heart");
+				alert
 
-			} else if(Mas.secretTwo > 25 && Mas.secretTwo < 51) {
+			} else if(Mas.secretTwo > 25 && Mas.secretTwo < 51 && Mas.active !== "clove") {
 				Mas.changeCard("clove");
 
-			} else if(Mas.secretTwo > 50 && Mas.secretTwo < 76) {
+			} else if(Mas.secretTwo > 50 && Mas.secretTwo < 76 && Mas.active !== "diamond") {
 				Mas.changeCard("diamond");
 
-			} else {
+			} else if(Mas.secretTwo > 76 && Mas.active !== "spade") {
 				Mas.changeCard("spade");
+
+			} else {
+				Mas.change();
 			}
 		} else {
 			//Add 1 to counter
 			Mas.playSound("nochange");
-			Mas.changeCounter ++;
+			if(Mas.changeExponential) {
+				Mas.changeCounter ++;
+			}
 			Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
 			//Mas.playAgain();
 		}
@@ -114,6 +123,7 @@ var Mas = {
 	},
 
 	changeCard: function(suit) {
+		Mas.active = suit;
 		Nodes.actual.firstChild.src = "pics/" + suit + ".png";
 		Mas.changeCounter = 1;
 		Nodes.chance.innerHTML = Mas.changeCounter * Mas.changePercent + "%";
@@ -153,6 +163,7 @@ var Nodes = {
 	//Selects
 	interval: document.getElementById("interval"),
 	probability: document.getElementById("probability"),
+	exponential: document.getElementById("exponential"),
 
 	//Divs
 	choose: document.getElementById("choose"),

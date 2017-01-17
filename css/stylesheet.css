@@ -8,14 +8,14 @@
 }
 
 #info {
-    width: 460px;
+    width: 380px;
     margin: auto;
 }
 
 #timer, #chance {
     display: inline-block;
     background-color: #50514F;
-    width: 220px;
+    width: 180px;
     margin: auto;
     text-align: center;
     vertical-align: middle;
